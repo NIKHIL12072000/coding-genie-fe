@@ -134,10 +134,16 @@ export function ProjectsDashboard() {
         removeUserInfo();
         navigate("/login");
     };
+    console.log(projects);
+    console.log(searchQuery);
+    let filteredProjects = projects
+    if (searchQuery.length != 0) {
+        filteredProjects = projects.filter((project) =>
+            project?.name?.toLowerCase().includes(searchQuery?.toLowerCase())
+        );
+    }
 
-    const filteredProjects = projects.filter((project) =>
-        project.name.toLowerCase().includes(searchQuery.toLowerCase())
-    );
+    console.log("Filtered: ", filteredProjects);
 
     return (
         <div className="min-h-screen bg-background">
@@ -148,7 +154,7 @@ export function ProjectsDashboard() {
                         <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center">
                             <Folder className="w-5 h-5 text-primary" />
                         </div>
-                        Project Companion
+                        Coding Genie
                     </div>
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
@@ -295,7 +301,7 @@ export function ProjectsDashboard() {
                                         ) : (
                                             <div
                                                 className="w-full h-full"
-                                                style={generateGradient(project.name)}
+                                                style={generateGradient(project?.name)}
                                             />
                                         )}
                                     </div>

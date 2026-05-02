@@ -30,9 +30,10 @@ export default function Signup() {
         setIsLoading(true);
 
         try {
-            const response = await api.signup({ name, username: email, password });
-            setAuthToken(response.token);
-            setUserInfo(response.user);
+            const signupResponse = await api.signup({ name, username: email, password });
+            setAuthToken(signupResponse.token);
+            setUserInfo(signupResponse.user);
+            console.log(signupResponse);
             toast({
                 title: "Welcome!",
                 description: "Account created successfully",
