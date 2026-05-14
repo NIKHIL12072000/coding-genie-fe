@@ -65,7 +65,7 @@ export function LoginModal() {
             <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-primary/20 mb-5">
               <Sparkles className="w-7 h-7 text-primary" />
             </div>
-            <h1 className="text-2xl font-semibold text-foreground mb-2">Welcome to Lovable</h1>
+            <h1 className="text-2xl font-semibold text-foreground mb-2">Welcome to Coding-Genie</h1>
             <p className="text-muted-foreground text-sm">Sign in to continue building</p>
           </div>
 
