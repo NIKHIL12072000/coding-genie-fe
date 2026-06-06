@@ -41,19 +41,19 @@ const getFileColor = (name: string) => {
   switch (ext) {
     case "ts":
     case "tsx":
-      return "text-blue-400";
+      return "text-blue-600";
     case "js":
     case "jsx":
-      return "text-yellow-400";
+      return "text-amber-600";
     case "json":
-      return "text-amber-400";
+      return "text-amber-600";
     case "css":
     case "scss":
-      return "text-pink-400";
+      return "text-pink-600";
     case "html":
-      return "text-orange-400";
+      return "text-orange-600";
     case "md":
-      return "text-gray-400";
+      return "text-zinc-500";
     default:
       return "text-muted-foreground";
   }
@@ -72,7 +72,7 @@ function FileTreeItem({ node, depth, selectedPath, onSelectFile }: FileTreeItemP
   const isDirectory = node.type === "directory";
   const isSelected = selectedPath === node.path;
   const FileIcon = isDirectory ? (isExpanded ? FolderOpen : Folder) : getFileIcon(node.name);
-  const fileColor = isDirectory ? "text-amber-400" : getFileColor(node.name);
+  const fileColor = isDirectory ? "text-amber-500" : getFileColor(node.name);
 
   const handleClick = () => {
     if (isDirectory) {

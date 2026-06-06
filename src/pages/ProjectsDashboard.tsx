@@ -151,8 +151,8 @@ export function ProjectsDashboard() {
             <header className="border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
                 <div className="container flex h-14 max-w-screen-2xl items-center justify-between px-4 sm:px-8">
                     <div className="flex items-center gap-2 font-bold text-lg">
-                        <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center">
-                            <Folder className="w-5 h-5 text-primary" />
+                        <div className="w-8 h-8 rounded-lg bg-muted p-0.5 flex items-center justify-center">
+                            <img src="/coding_genie-logo.png" alt="Coding Genie Logo" className="w-full h-full object-contain" />
                         </div>
                         Coding Genie
                     </div>

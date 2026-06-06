@@ -17,16 +17,16 @@ const getFileIcon = (path: string) => {
   switch (ext) {
     case 'tsx':
     case 'ts':
-      return 'text-blue-400';
+      return 'bg-blue-500';
     case 'jsx':
     case 'js':
-      return 'text-yellow-400';
+      return 'bg-yellow-500';
     case 'css':
-      return 'text-pink-400';
+      return 'bg-pink-500';
     case 'json':
-      return 'text-green-400';
+      return 'bg-green-500';
     default:
-      return 'text-muted-foreground';
+      return 'bg-muted-foreground/50';
   }
 };
 

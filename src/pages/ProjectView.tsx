@@ -288,6 +288,10 @@ Please analyze this error and fix the code to resolve it.`;
       {/* Header */}
       <header className="h-12 shrink-0 border-b border-border/50 bg-panel flex items-center justify-between px-3">
         <div className="flex items-center gap-2">
+          <div className="w-6 h-6 rounded bg-muted p-0.5 flex items-center justify-center cursor-pointer hover:opacity-85 transition-opacity" onClick={() => navigate("/projects")} title="Back to Projects">
+            <img src="/coding_genie-logo.png" alt="Coding Genie Logo" className="w-full h-full object-contain" />
+          </div>
+          <span className="text-muted-foreground/30 text-sm">/</span>
           {project ? (
             <>
               <div

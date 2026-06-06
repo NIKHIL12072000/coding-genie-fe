@@ -112,7 +112,7 @@ export function PreviewPanel({ projectId, runtimeError, onDismiss, onFix }: Prev
       </div>
 
       {/* Preview Area */}
-      <div className="flex-1 bg-[#1a1a1a]">
+      <div className="flex-1 bg-muted/30">
         {previewUrl ? (
           <iframe
             src={previewUrl}

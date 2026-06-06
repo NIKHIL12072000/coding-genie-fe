@@ -26,21 +26,21 @@ export function RuntimeErrorAlert({ error, onDismiss, onFix }: RuntimeErrorAlert
 
     return (
         <div className="absolute bottom-4 right-4 z-50 animate-in slide-in-from-bottom-5 fade-in duration-300">
-            <div className="w-[400px] bg-[#1e1e20] border border-red-500/20 rounded-xl shadow-2xl overflow-hidden">
+            <div className="w-[400px] bg-card border border-red-500/35 rounded-xl shadow-2xl overflow-hidden">
                 {/* Header */}
-                <div className="flex items-center justify-between p-4 bg-red-500/10 border-b border-red-500/10">
+                <div className="flex items-center justify-between p-4 bg-red-500/5 border-b border-red-500/10">
                     <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded-full bg-red-500/20 flex items-center justify-center shrink-0">
+                        <div className="w-8 h-8 rounded-full bg-red-500/10 flex items-center justify-center shrink-0">
                             <AlertCircle className="w-5 h-5 text-red-500" />
                         </div>
                         <div>
-                            <h3 className="text-sm font-semibold text-white">Issues Detected</h3>
-                            <p className="text-xs text-red-400">1 error found</p>
+                            <h3 className="text-sm font-semibold text-foreground">Issues Detected</h3>
+                            <p className="text-xs text-red-500">1 error found</p>
                         </div>
                     </div>
                     <button
                         onClick={onDismiss}
-                        className="text-zinc-400 hover:text-white transition-colors"
+                        className="text-muted-foreground hover:text-foreground transition-colors"
                     >
                         <X className="w-4 h-4" />
                     </button>
@@ -52,24 +52,24 @@ export function RuntimeErrorAlert({ error, onDismiss, onFix }: RuntimeErrorAlert
                         className="group cursor-pointer"
                         onClick={() => setIsExpanded(!isExpanded)}
                     >
-                        <div className="flex items-start gap-2 text-zinc-300">
+                        <div className="flex items-start gap-2 text-foreground/90">
                             {isExpanded ? (
-                                <ChevronDown className="w-4 h-4 mt-0.5 text-zinc-500" />
+                                <ChevronDown className="w-4 h-4 mt-0.5 text-muted-foreground" />
                             ) : (
-                                <ChevronRight className="w-4 h-4 mt-0.5 text-zinc-500" />
+                                <ChevronRight className="w-4 h-4 mt-0.5 text-muted-foreground" />
                             )}
                             <div className="flex-1 overflow-hidden">
                                 <div className="flex items-center gap-2 mb-1">
-                                    <span className="text-xs font-medium px-1.5 py-0.5 rounded bg-red-500/20 text-red-400 border border-red-500/10">
+                                    <span className="text-xs font-medium px-1.5 py-0.5 rounded bg-red-500/10 text-red-600 border border-red-500/10">
                                         {error.source || "Runtime Error"}
                                     </span>
                                     {error.filename && (
-                                        <span className="text-xs text-zinc-500 truncate max-w-[200px]" title={error.filename}>
+                                        <span className="text-xs text-muted-foreground truncate max-w-[200px]" title={error.filename}>
                                             on {error.filename.split('/').pop()}
                                         </span>
                                     )}
                                 </div>
-                                <p className={cn("text-xs font-mono text-zinc-300 break-words leading-relaxed", !isExpanded && "line-clamp-2")}>
+                                <p className={cn("text-xs font-mono text-foreground/80 break-words leading-relaxed", !isExpanded && "line-clamp-2")}>
                                     {error.message}
                                 </p>
                             </div>
@@ -79,8 +79,8 @@ export function RuntimeErrorAlert({ error, onDismiss, onFix }: RuntimeErrorAlert
                     {/* Stack Trace (Expanded) */}
                     {isExpanded && error.stack && (
                         <div className="mt-4 pl-6">
-                            <div className="p-3 bg-black/30 rounded-lg border border-zinc-800/50">
-                                <pre className="text-[10px] text-zinc-500 whitespace-pre-wrap font-mono overflow-auto max-h-[200px]">
+                            <div className="p-3 bg-muted/50 rounded-lg border border-border">
+                                <pre className="text-[10px] text-muted-foreground whitespace-pre-wrap font-mono overflow-auto max-h-[200px]">
                                     {error.stack}
                                 </pre>
                             </div>
@@ -89,9 +89,9 @@ export function RuntimeErrorAlert({ error, onDismiss, onFix }: RuntimeErrorAlert
                 </div>
 
                 {/* Footer */}
-                <div className="p-3 bg-[#27272a] flex items-center justify-between border-t border-zinc-800">
-                    <div className="flex items-center gap-3 text-xs text-zinc-500 px-2">
-                        <button onClick={onDismiss} className="hover:text-zinc-300 transition-colors">
+                <div className="p-3 bg-muted flex items-center justify-between border-t border-border">
+                    <div className="flex items-center gap-3 text-xs text-muted-foreground px-2">
+                        <button onClick={onDismiss} className="hover:text-foreground transition-colors">
                             Dismiss
                         </button>
                         <span>ESC</span>
